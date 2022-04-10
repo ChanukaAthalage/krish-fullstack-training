@@ -57,7 +57,7 @@ public class DepthFirst {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		DepthFirst dfs = new DepthFirst(7);
+		DepthFirst dfs = new DepthFirst(6);
 		dfs.edge(0, 1);
 		dfs.edge(0, 2);
 		dfs.edge(1, 0);
