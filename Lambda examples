@@ -1,0 +1,151 @@
+--Example 1--  (without parameters)
+
+// without Lambda
+
+ public interface Greet{                                                                                        
+	
+	public void Dialogue();
+
+ }
+ 
+ public class Example implements Greet{
+ 
+	public static void main(String[] args){
+	
+		Example example = new Example();
+		example.Dialogue();
+ 
+ }
+ 
+	public void Dialogue(){
+	
+		System.out.println("Welcome to my Lambda examples");
+	}
+ 
+ 
+ }
+ 
+..................................................................................
+
+
+// with Lambda
+ 
+  public interface Greet{                                                                                        
+	
+	public void Dialogue();
+
+ }
+ 
+ public class Example{
+ 
+	public static void main(String[] args){
+	
+		Greet greet = () -> System.out.println("Welcome to my Lambda examples");
+		greet.Dialogue();
+ 
+	}
+ 
+ }
+ 
+ ###################################################################################
+
+--Example 2-- (with same variable type parameters)
+
+// without Lambda
+
+ public interface Duration{                                                                                        
+	
+	public int calculate(int startYear, int endYear);
+
+ }
+ 
+ public class Gota implements Duration{
+ 
+	public static void main(String[] args){
+	
+		Gota gota = new Gota();
+		System.out.println(gota.calculate(2020, 2022));
+ 
+ }
+ 
+	public int calculate(int startYear, int endYear){
+	
+		return endYear - startYear;
+	}
+ 
+ 
+ }
+ 
+..................................................................................
+
+
+// with Lambda
+ 
+  public interface Duration{                                                                                        
+	
+	public int calculate(int startYear, int endYear);
+
+ }
+ 
+ public class Gota{
+ 
+	public static void main(String[] args){
+	
+		Duration duration = (startYear, endYear) -> endYear - startYear;
+		System.out.println(duration.calculate(2020,2022));
+ 
+	}
+ 
+ }
+ 
+ ###################################################################################
+ 
+ --Example 3-- (with different variable type parameters)
+
+// without Lambda
+
+ public interface Average{                                                                                        
+	
+	public double calculate(double totMarks, int numSubjects);
+
+ }
+ 
+ public class Student implements Average{
+ 
+	public static void main(String[] args){
+	
+		Student student = new Student();
+		System.out.println(student.calculate(410.25,5));
+ 
+ }
+ 
+	public double calculate(double totMarks, int numSubjects){
+	
+		return totMarks/numSubjects;
+	}
+ 
+ 
+ }
+ 
+..................................................................................
+
+
+// with Lambda
+ 
+  public interface Average{                                                                                        
+	
+	public double calculate(double totMarks, int numSubjects);
+
+ }
+ 
+ public class Student{
+ 
+	public static void main(String[] args){
+	
+		Average average = (totMarks,numSubjects) -> totMarks/numSubjects;
+		System.out.println(average.calculate(410.25,5));
+ 
+	}
+ 
+ }
+ 
