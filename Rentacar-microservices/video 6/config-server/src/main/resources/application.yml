@@ -1,0 +1,14 @@
+server:
+  port: 8191
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ChanukaAthalage/spring-cloud-config-store.git
+          #username pw for private accounts
+          search-paths:
+          - '*service'
+          #repos:
+            
