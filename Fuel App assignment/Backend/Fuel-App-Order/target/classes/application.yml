@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://ChanukaAthalage:ChanukaAthalage@fuel-app.kyctv.mongodb.net/?retryWrites=true&w=majority
+      database: Fuel-App
+    #  host: localhost
+    #  port: 27017 
+    #  username: ChanukaAthalage
+    #  password: ChanukaAthalage 
+
+server:
+  port: 8080  
+      
+      
+ 
