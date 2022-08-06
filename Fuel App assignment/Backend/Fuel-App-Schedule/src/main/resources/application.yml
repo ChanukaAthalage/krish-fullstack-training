@@ -5,7 +5,7 @@ spring:
       database: Fuel-App
       
 server:
-  port: 8082
+  port: 8083
   
   kafka:
     bootstrap-servers: 9092

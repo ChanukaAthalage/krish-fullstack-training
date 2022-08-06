@@ -26,7 +26,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 		
 		Schedule schedule = new Schedule();
 		schedule.setOrderRefId(orderRefId);
-		schedule.setDate(LocalDate.now().plusDays(2));
+		schedule.setDate(LocalDate.now().plusDays(1));
 		saveSchedule(schedule);
 		
 		return schedule;

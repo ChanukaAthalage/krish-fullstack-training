@@ -6,8 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import com.example.inventory.constant.BaseUrl;
 import com.example.inventory.model.Available;
 import com.example.inventory.model.Order;
 import com.example.inventory.repository.AvailableRepo;
@@ -20,9 +18,6 @@ public class AvailableServiceImpl implements AvailableService {
 	
 	@Autowired
 	ReservedService reservedService;
-	
-	@Autowired
-	RestTemplate restTemplate;
 
 	
 	
@@ -45,9 +40,8 @@ public class AvailableServiceImpl implements AvailableService {
 		Available byFuelType = availableRepo.findByFuelType(fuelType);
 		int availableCapacity = byFuelType.getQty();
 		String status = "Allocated";
+		
 		 if(availableCapacity>=fuelCapacity){
-			 
-			 getOrder(orderRefId, status);
 			 int newAvailableCapacity  = availableCapacity - fuelCapacity;
 				byFuelType.setQty(newAvailableCapacity);
 				saveAvailableFuel(byFuelType);
@@ -59,9 +53,5 @@ public class AvailableServiceImpl implements AvailableService {
 
 	}
 	
-	public void getOrder(int orderRefId , String status){
-		restTemplate.put(BaseUrl.ORDER_URL+orderRefId+"/"+status, Order.class);
-		
-	}
 
 }

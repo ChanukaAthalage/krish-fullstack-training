@@ -1,4 +1,4 @@
-package com.example.schedule.model;
+package com.example.order.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Reserved {
 
-	
+
 	private int orderRefId;
 	private String fuelType;
 	private int qty;
