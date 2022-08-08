@@ -3,12 +3,6 @@ package com.example.order.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
-
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
 @Document(collection = "Order")
 public class Order {
 	
@@ -20,13 +14,14 @@ public class Order {
 	private int capacity;
 	private String fuelType;
 	private String status = "Pending";
+	private String date = "Pending";
 	
 	
 	
 	public Order() {}
 
 
-	public Order(int orderRefId, String name, int shedId, String location, int capacity, String fuelType, String status) {
+	public Order(int orderRefId, String name, int shedId, String location, int capacity, String fuelType, String status, String date) {
 		super();
 		this.orderRefId = orderRefId;
 		this.name = name;
@@ -35,6 +30,7 @@ public class Order {
 		this.capacity = capacity;
 		this.fuelType = fuelType;
 		this.status = status;
+		this.date = date;
 	}
 
 
@@ -106,6 +102,18 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
+	
 	
 
 	

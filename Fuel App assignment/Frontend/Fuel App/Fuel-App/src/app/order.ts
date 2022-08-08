@@ -6,6 +6,7 @@ export class Order {
     capacity!:number;
     fuelType!:string;
     status!:string;
+    date!:string;
 
 
 }

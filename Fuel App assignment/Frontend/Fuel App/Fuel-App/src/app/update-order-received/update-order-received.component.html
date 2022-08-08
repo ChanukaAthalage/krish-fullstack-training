@@ -20,11 +20,12 @@
         <tr>
           <th scope="col">RefID</th>
           <th scope="col">Name</th>
-          <th scope="col">Id</th>
+          <th scope="col">Shed Id</th>
           <th scope="col">Location</th>
           <th scope="col">Capacity</th>
           <th scope="col">Fuel Type</th>
           <th scope="col">Status</th>
+          <th scope="col">Arrival Date</th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +37,7 @@
           <td>{{order.capacity}}</td>
           <td>{{order.fuelType}}</td>
           <td>{{order.status}}</td>
+          <td>{{order.date}}</td>
           <td *ngIf="order.status != 'Completed'"><button type="button" class="btn btn-primary mt-sm-1 mb-sm-1" (click)="getOrderComplete(order.orderRefId)">Completed</button></td>
         </tr>
       </tbody>

@@ -1,22 +1,22 @@
-package com.example.schedule.model;
+package com.example.dispatch.model;
 
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Schedule")
-public class Schedule {
+@Document(collection = "Dispatch")
+public class Dispatch {
 	
 	@Id
 	private int orderRefId;
 	private String date;
 	
-	public Schedule() {
+	public Dispatch() {
 	
 	}
 
-	public Schedule(int orderRefId, String date) {
+	public Dispatch(int orderRefId, String date) {
 		this.orderRefId = orderRefId;
 		this.date = date;
 	}
@@ -36,6 +36,9 @@ public class Schedule {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	
+
 	
 	
 	

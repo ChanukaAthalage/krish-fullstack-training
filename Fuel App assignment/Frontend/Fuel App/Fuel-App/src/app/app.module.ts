@@ -9,6 +9,7 @@ import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { CheckOrdersComponent } from './check-orders/check-orders.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { UpdateOrderReceivedComponent } from './update-order-received/update-order-received.component';
+import { DispatchComponent } from './dispatch/dispatch.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UpdateOrderReceivedComponent } from './update-order-received/update-ord
     CheckOrdersComponent,
     AddOrderComponent,
     UpdateOrderReceivedComponent,
+    DispatchComponent,
     
   ],
   imports: [

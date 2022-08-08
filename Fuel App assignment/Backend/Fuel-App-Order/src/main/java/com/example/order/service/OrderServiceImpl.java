@@ -84,6 +84,24 @@ public class OrderServiceImpl implements OrderService {
 		  }
 	}
 	
+	@Override
+	public ResponseEntity<Order> orderReceived(int id, String status, String date) {
+		
+		Optional<Order> byId = orderRepo.findById(id);
+		if(byId.isPresent()) {
+			Order order = byId.get();
+			order.setStatus(status);
+			order.setDate(date);
+			
+			orderRepo.save(order);
+			
+			return ResponseEntity.status(HttpStatus.OK).body(order);
+			
+		}else {
+		    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		  }
+	}
+	
 	
 
 
