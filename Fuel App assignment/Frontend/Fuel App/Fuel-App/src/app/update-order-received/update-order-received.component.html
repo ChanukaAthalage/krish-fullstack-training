@@ -38,7 +38,7 @@
           <td>{{order.fuelType}}</td>
           <td>{{order.status}}</td>
           <td>{{order.date}}</td>
-          <td *ngIf="order.status != 'Completed'"><button type="button" class="btn btn-primary mt-sm-1 mb-sm-1" (click)="getOrderComplete(order.orderRefId)">Completed</button></td>
+          <td *ngIf="order.status == 'Dispatched'"><button type="button" class="btn btn-primary mt-sm-1 mb-sm-1" (click)="getOrderComplete(order.orderRefId)">Completed</button></td>
         </tr>
       </tbody>
     </table>

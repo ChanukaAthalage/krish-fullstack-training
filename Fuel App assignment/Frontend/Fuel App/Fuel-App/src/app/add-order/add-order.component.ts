@@ -23,4 +23,8 @@ export class AddOrderComponent implements OnInit {
     
   }
 
+  realodPage(){
+    location.reload();
+  }
+
 }

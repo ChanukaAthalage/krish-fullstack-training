@@ -24,8 +24,5 @@ public class AvailableController {
 		return availableService.saveAvailableFuel(available);
 	}
 	
-//	@PutMapping("/updateavailable")
-//	public ResponseEntity<Available> updateAvailableFuel(@PathVariable String fuelType){
-//		
-//	}
+
 }

@@ -23,14 +23,10 @@ public class AvailableServiceImpl implements AvailableService {
 	
 	@Override
 	public ResponseEntity<Available> saveAvailableFuel(Available available) {
-		try {
+
 		availableRepo.save(available);
-		
-		}catch(Exception e) {
-			
-		}
-	
 		return ResponseEntity.status(HttpStatus.OK).body(available);	
+		
 	}
 
 	@Override
@@ -39,7 +35,6 @@ public class AvailableServiceImpl implements AvailableService {
 
 		Available byFuelType = availableRepo.findByFuelType(fuelType);
 		int availableCapacity = byFuelType.getQty();
-		String status = "Allocated";
 		
 		 if(availableCapacity>=fuelCapacity){
 			 int newAvailableCapacity  = availableCapacity - fuelCapacity;

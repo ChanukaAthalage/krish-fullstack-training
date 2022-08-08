@@ -37,35 +37,30 @@ public class OrderServiceImpl implements OrderService {
 		
 		Random random = new Random();
 		int refId  = random.nextInt(2500);
-		
-		
 		 //refId = refId+1;
-		
-		try {
 			
-			order.setOrderRefId(refId);
-			kafkaTemplate.send(KafkaTopicConfig.MESSAGE_TOPIC, order);
-			orderRepo.save(order);
+		order.setOrderRefId(refId);
+		kafkaTemplate.send(KafkaTopicConfig.MESSAGE_TOPIC, order);
+		orderRepo.save(order);
 			
-		}catch(Exception e) {
-			
-		}
-		
 		return ResponseEntity.status(HttpStatus.OK).body(order);
 		
 	}
+	
 
 	@Override
 	public ResponseEntity<List<Order>> getOrder(int shedId) {
 	
 		return ResponseEntity.status(HttpStatus.OK).body(orderRepo.findByShedId(shedId));
 	}
+	
 
 	@Override
 	public ResponseEntity<List<Order>> getAllOrders() {
 		
 		return ResponseEntity.status(HttpStatus.OK).body(orderRepo.findAll());
 	}
+	
 
 	@Override
 	public ResponseEntity<Order> orderReceived(int id, String status) {
@@ -83,6 +78,7 @@ public class OrderServiceImpl implements OrderService {
 		    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		  }
 	}
+	
 	
 	@Override
 	public ResponseEntity<Order> orderReceived(int id, String status, String date) {

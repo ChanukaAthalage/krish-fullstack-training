@@ -5,7 +5,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.inventory.config.KafkaTopicConfig;
-import com.example.inventory.config.KafkaTopicInOrder;
 import com.example.inventory.model.Reserved;
 import com.example.inventory.repository.ReservedRepo;
 
@@ -22,7 +21,6 @@ public class ReservedServiceImpl implements ReservedService{
 	public Reserved saveReserved(Reserved reserved) {
 		
 		kafkaTemplate.send(KafkaTopicConfig.MESSAGE_TOPIC,reserved);
-		kafkaTemplate.send(KafkaTopicInOrder.MESSAGE_TOPIC,reserved);
 		return reservedRepo.save(reserved);
 	}
 	
